@@ -4,10 +4,10 @@
   "description": "Cardinal application template",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node ./node_modules/octopus/scripts/run && npm run build",
-    "build-cardinal": "node ./node_modules/octopus/scripts/run build-cardinal",
+    "postinstall": "node ./node_modules/octopus/scripts/run",
+    "build-conversational": "node ./node_modules/octopus/scripts/run build-conversational",
     "build-theme": "node ./node_modules/octopus/scripts/run build-theme",
-    "build": "npm run build-cardinal && npm run build-theme",
+    "build": "npm run build-conversational && npm run build-theme",
     "web": "ws --spa ./index.html"
   },
   "repository": {
@@ -15,6 +15,7 @@
     "url": "git+https://github.com/PrivateSky/cardinal-app-template.git"
   },
   "dependencies": {
+    "@stencil/core": "^1.17.3",
     "octopus": "git+https://github.com/PrivateSky/octopus.git#1.0.4",
     "local-web-server": "^3.0.7"
   },

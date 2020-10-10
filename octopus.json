@@ -2,17 +2,40 @@
   "workDir": ".",
   "dependencies": [
     {
-      "name": "cardinal",
-      "src": "https://github.com/privatesky/cardinal.git",
+      "name": "cardinal-core",
+      "src": "https://github.com/daniel-visoiu/cardinal-core.git",
       "actions": [
         {
           "type": "smartClone",
-          "target": "./dev/",
+          "target": "./node_modules/",
           "collectLog": false
         },
-		 {
+        {
           "type": "execute",
-          "cmd": "cd ./dev/cardinal && npm install"
+          "cmd": "cd ./node_modules/cardinal-core && npm install"
+        },
+        {
+          "type": "execute",
+          "cmd": "cd ./node_modules/cardinal-core && npm run build"
+        }
+      ]
+    },
+    {
+      "name": "cardinal-ui",
+      "src": "https://github.com/daniel-visoiu/cardinal-ui.git",
+      "actions": [
+        {
+          "type": "smartClone",
+          "target": "./node_modules/",
+          "collectLog": false
+        },
+        {
+          "type": "execute",
+          "cmd": "cd ./node_modules/cardinal-ui && npm install"
+        },
+        {
+          "type": "execute",
+          "cmd": "cd ./node_modules/cardinal-ui && npm run build"
         }
       ]
     },
@@ -28,18 +51,18 @@
       ]
     }
   ],
-  "build-cardinal": [
+  "build-conversational": [
     {
-      "name": "cardinal-build",
+      "name": "build-conversational",
       "src": "",
       "actions": [
         {
           "type": "remove",
-          "target": "./cardinal"
+          "target": "./dist"
         },
         {
           "type": "execute",
-          "cmd": "cd dev/cardinal && npm run dist ../../"
+          "cmd": "stencil build"
         }
       ]
     }
