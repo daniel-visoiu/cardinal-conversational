@@ -4,10 +4,7 @@
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "es2017"
-    ],
+    "lib": ["dom", "es2017"],
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2017",
@@ -15,24 +12,12 @@
     "noUnusedParameters": true,
     "jsx": "react",
     "jsxFactory": "h",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "cardinal-core/*": [
-        // "./node_modules/cardinal-core/dist/types/*",
-        "./node_modules/cardinal-core/dist/collection/*",
-      ],
-      "cardinal-ui/*": [
-        // "./node_modules/cardinal-ui/dist/types/*",
-        "./node_modules/cardinal-ui/dist/collection/*",
-      ]
+      "cardinal-core/*": ["dev/cardinal-core/src/*"],
+      "cardinal-ui": ["cardinal-ui"],
     }
   },
-  "include": [
-    "src",
-    "assets",
-    "types/jsx.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src", "assets", "types/jsx.d.ts"],
+  "exclude": ["node_modules"]
 }

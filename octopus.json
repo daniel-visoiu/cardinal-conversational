@@ -7,16 +7,16 @@
       "actions": [
         {
           "type": "smartClone",
-          "target": "./node_modules/",
+          "target": "./dev/",
           "collectLog": false
         },
         {
           "type": "execute",
-          "cmd": "cd ./node_modules/cardinal-core && npm install"
+          "cmd": "cd ./dev/cardinal-core && npm install"
         },
         {
           "type": "execute",
-          "cmd": "cd ./node_modules/cardinal-core && npm run build"
+          "cmd": "cd ./dev/cardinal-core && npm run build"
         }
       ]
     },
@@ -26,16 +26,21 @@
       "actions": [
         {
           "type": "smartClone",
-          "target": "./node_modules/",
+          "target": "./dev/",
           "collectLog": false
         },
         {
           "type": "execute",
-          "cmd": "cd ./node_modules/cardinal-ui && npm install"
+          "cmd": "cd ./dev/cardinal-ui && npm install"
         },
         {
           "type": "execute",
-          "cmd": "cd ./node_modules/cardinal-ui && npm run build"
+          "cmd": "cd ./dev/cardinal-ui && npm run build"
+        },
+        {
+          "type": "copy",
+          "src": "./dev/cardinal-ui/dist",
+          "target": "./cardinal-ui"
         }
       ]
     },
